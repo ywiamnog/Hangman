@@ -6,15 +6,10 @@ import java.util.Set;
 
 public class Player {
 
-    // /**
-    //  * The number of points that the player has.
-    //  */
-    // private int points;
-    // 
-    // /**
-    //  * The number of incorrect guesses the player currently has for this word.
-    //  */
-    // private int numIncorrectGuesses;
+    /**
+     * The number of incorrect guesses the player currently has for this word.
+     */
+    private int numIncorrectGuesses;
 
     /**
      * The characters the player has already guessed for this word.
@@ -22,19 +17,34 @@ public class Player {
     private Set<String> alreadyGuessed;
 
     /**
+     * The maximum number of incorrect guesses. AKA number of lives.
+     */
+    private int maxIncorrect = 7;
+
+    /**
      * The constructor. Constructs a new player.
      */
     public Player() {
-        // this.points = 0;
-        // this.numIncorrectGuesses = 0;
+        this.numIncorrectGuesses = 0;
         alreadyGuessed = new HashSet<>();
+    }
+
+    /**
+     * Returns false if the player is dead, ie surpassed 7 incorrect guesses.
+     * Returns true if the player is alive, ie less than 7 incorrect guesses.
+     * @return whether the player is alive or dead
+     */
+    public boolean alive() {
+        return (this.numIncorrectGuesses >= maxIncorrect ? false : true);
     }
 
     /**
      * The player guesses a word.
      * @param word the word that the player is supposed to guess.
      */
-    public void guess(String word) {
+    public boolean guess(String word) {
+        // reset all
+        this.reset();
         System.out.println("");
         // pre-process word so that it's all in upper-case
         word = word.toUpperCase();
@@ -85,24 +95,26 @@ public class Player {
                 }
                 current = stringBuilder.toString();
                 System.out.println(current);
+                System.out.println("Lives remaining: " + (maxIncorrect-numIncorrectGuesses) + ".");
             }
 
             // If input character incorrect
             else {
                 System.out.println("Incorrect guess. ");
+                this.numIncorrectGuesses += 1;
+                System.out.println("Lives remaining: " + (maxIncorrect-numIncorrectGuesses) + ".");
+                if (!this.alive()) {
+                    return false;
+                }
             }
 
-            // // If too many incorrect guesses
-            // if (numIncorrectGuesses >= 7) {
-            //     System.out.println("You lose!")
-            // }
             System.out.println();
         } while (current.contains("_"));
-        scanner.close();
+        // scanner.close();
 
         // If word completely revealed, ie end of this word
         System.out.println("Congratulations! You've guess the word! The word was \"" + word + "\".");
-
+        return true;
     }
     
     /**
@@ -127,12 +139,12 @@ public class Player {
         return true;        
     }
 
-    // /**
-    //  * Resets the number of points this player has to 0, and resets the characters already guessed to empty.
-    //  */
-    // private void reset(){
-    //     this.numIncorrectGuesses = 0;
-    //     this.alreadyGuessed = new ArrayList<>();
-    // }
+    /**
+     * Resets the number of incorrect guesses to be 0, and resets the characters already guessed to empty.
+     */
+    private void reset(){
+        this.numIncorrectGuesses = 0;
+        this.alreadyGuessed = new HashSet<>();
+    }
 
 }
