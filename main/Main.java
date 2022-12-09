@@ -15,21 +15,24 @@ public class Main {
         Player player = new Player();
         Scanner scanner = new Scanner(System.in);
         boolean cont = true;
-        do {
-            player.guess(word);
+        player.guess(word);
+        // do {
+        //     player.guess(word);
 
-            // new word run it back?
-            System.out.print("Continue with a new word? (Say \"Y\" for yes or \"N\" for no)");
-            String contStr = scanner.nextLine();
-            while (!contStr.matches("[YyNn]")){
-                System.out.print("Sorry, I didn't understand that. Continue with a new word? (Say \"Y\" for yes or \"N\" for no)");
-                contStr = scanner.nextLine();
-            }
-            // no run it back >:(
-            if (contStr.equals("N") || contStr.equals("n")){
-                cont = false;
-            }
-        } while (cont == true);
+        //     // new word run it back?
+        //     System.out.print("Continue with a new word? (Say \"Y\" for yes or \"N\" for no): ");
+        //     String contStr = scanner.nextLine();
+            
+        //     while (!contStr.matches("[YyNn]")){
+        //         System.out.print("Sorry, I didn't understand that. Continue with a new word? (Say \"Y\" for yes or \"N\" for no): ");
+        //         contStr = scanner.nextLine();
+        //     }
+        //     // no run it back >:(
+        //     if (contStr.equals("N") || contStr.equals("n")){
+        //         cont = false;
+        //     }
+        // } while (cont == true);
+
         scanner.close();
     }
 

@@ -62,21 +62,25 @@ public class Player {
 
             // Ask player to input a character to guess
             System.out.print("Input a letter to guess: ");
-            String guessedChar = scanner.nextLine();
+            String guessedChar = scanner.nextLine().toUpperCase();
             while (!this.validGuess(guessedChar)) {
-                System.out.print("Please enter a new letter.");
-                guessedChar = scanner.nextLine();
+                System.out.print("Please enter a new letter: ");
+                guessedChar = scanner.nextLine().toUpperCase();
                 // For consistency, we only work with upper-case.
-                guessedChar = guessedChar.toUpperCase();
             }
 
             // If input character correct
             if (word.contains(guessedChar.toUpperCase())) {
+                System.out.println("Good guess!");
                 // iterate through word and indicate that these letters have been guessed
                 for (int i = 0; i < word.length(); i++) {
-                    if (word.substring(i, i+1).equals(guessedChar)) {
-                        wordArr[i] = guessedChar;
-                        stringBuilder = stringBuilder.replace(2*i, 2*i+1, guessedChar);
+                    if (word.substring(i, i+1).equals(guessedChar.toUpperCase())) {
+                        wordArr[i] = guessedChar + " ";
+                        stringBuilder = new StringBuilder();
+                        for (int k = 0; k < wordArr.length; k++) {
+                            stringBuilder.append(wordArr[k]);
+                        }
+                        current = stringBuilder.toString();
                     }
                 }
                 current = stringBuilder.toString();
@@ -85,8 +89,7 @@ public class Player {
 
             // If input character incorrect
             else {
-                System.out.println("Incorrect guess.");
-                guessedChar = scanner.nextLine();
+                System.out.println("Incorrect guess. ");
             }
 
             // // If too many incorrect guesses
@@ -98,7 +101,7 @@ public class Player {
         scanner.close();
 
         // If word completely revealed, ie end of this word
-        System.out.println("Congratulations! You've guess the word! The word was " + word.toLowerCase());
+        System.out.println("Congratulations! You've guess the word! The word was \"" + word + "\".");
 
     }
     
@@ -116,7 +119,7 @@ public class Player {
         // If input character already guessed
         int numAlrGuessed;
         numAlrGuessed = alreadyGuessed.size();
-        this.alreadyGuessed.add(guessedChar);
+        this.alreadyGuessed.add(guessedChar.toUpperCase());
         if (numAlrGuessed == this.alreadyGuessed.size()) {
             System.out.print("You've already guessed this character. ");
             return false;
