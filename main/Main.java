@@ -9,7 +9,7 @@ public class Main {
         String userDir = System.getProperty("user.dir");
         WordGenerator wordGenerator = new WordGenerator(userDir + "/main/words/wordsList.txt");
         String word = wordGenerator.getWord();
-        System.out.println(word);
+        // System.out.println(word);
 
         // Create new player
         Player player = new Player();
