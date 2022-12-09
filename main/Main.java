@@ -6,8 +6,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws IOException{
         // Create new game of hangman
-        WordGenerator wordGenerator = new WordGenerator("/main/words/wordsList.txt");
+        String userDir = System.getProperty("user.dir");
+        WordGenerator wordGenerator = new WordGenerator(userDir + "/main/words/wordsList.txt");
         String word = wordGenerator.getWord();
+        System.out.println(word);
 
         // Create new player
         Player player = new Player();

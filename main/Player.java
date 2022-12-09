@@ -35,6 +35,7 @@ public class Player {
      * @param word the word that the player is supposed to guess.
      */
     public void guess(String word) {
+        System.out.println("");
         // pre-process word so that it's all in upper-case
         word = word.toUpperCase();
 
@@ -42,19 +43,22 @@ public class Player {
 
         // Represent the word as a series of underscores
         for (int i = 0; i < wordArr.length; i++) {
-            wordArr[i] = "_";
+            wordArr[i] = "_ ";
         }
 
         Scanner scanner = new Scanner(System.in);
 
+        // Initialize current string
         String current;
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < word.length(); i++) {
+            stringBuilder.append(wordArr[i]);
+        }
+        current = stringBuilder.toString();
+        
+        // deal with the guess
         do {
-            StringBuilder stringBuilder = new StringBuilder();
-            for (int i = 0; i < word.length(); i++) {
-                stringBuilder.append(wordArr[i] + " ");
-            }
-            current = stringBuilder.substring(0, word.length()-1);
-            System.out.println(current);
+            System.out.println("Guess the word: " + current);
 
             // Ask player to input a character to guess
             System.out.print("Input a letter to guess: ");
@@ -67,7 +71,7 @@ public class Player {
             }
 
             // If input character correct
-            if (word.contains(guessedChar)) {
+            if (word.contains(guessedChar.toUpperCase())) {
                 // iterate through word and indicate that these letters have been guessed
                 for (int i = 0; i < word.length(); i++) {
                     if (word.substring(i, i+1).equals(guessedChar)) {
@@ -89,7 +93,7 @@ public class Player {
             // if (numIncorrectGuesses >= 7) {
             //     System.out.println("You lose!")
             // }
-
+            System.out.println();
         } while (current.contains("_"));
         scanner.close();
 
@@ -105,7 +109,7 @@ public class Player {
      * @return a boolean determining if it's a valid guess
      */
     private boolean validGuess(String guessedChar) {
-        if (!guessedChar.matches("[qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM")) {
+        if (!guessedChar.matches("[qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM]")) {
             System.out.print("Not a valid letter. ");
             return false;
         }

@@ -59,7 +59,7 @@ public class WordGenerator {
         int randInt;
         do {
             randInt = rand.nextInt(this.wordList.size());
-        } while (!this.alreadyUsed.contains(randInt));
+        } while (this.alreadyUsed.contains(randInt));
 
         this.word = wordList.get(randInt); 
         this.alreadyUsed.add(randInt);

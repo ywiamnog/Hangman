@@ -58,10 +58,8 @@ arrive
 art
 article
 artist
-as
 ask
 assume
-at
 attack
 attention
 attorney
@@ -79,7 +77,6 @@ ball
 bank
 bar
 base
-be
 beat
 beautiful
 because
@@ -118,7 +115,6 @@ building
 business
 but
 buy
-by
 call
 camera
 campaign
@@ -229,7 +225,6 @@ discover
 discuss
 discussion
 disease
-do
 doctor
 dog
 door
@@ -345,7 +340,6 @@ get
 girl
 give
 glass
-go
 goal
 good
 government
@@ -366,7 +360,6 @@ happen
 happy
 hard
 have
-he
 head
 health
 hear
@@ -397,16 +390,13 @@ huge
 human
 hundred
 husband
-I
 idea
 identify
-if
 image
 imagine
 impact
 important
 improve
-in
 include
 including
 increase
@@ -426,7 +416,6 @@ into
 investment
 involve
 issue
-it
 item
 its
 itself
@@ -499,7 +488,6 @@ material
 matter
 may
 maybe
-me
 mean
 measure
 media
@@ -532,12 +520,9 @@ mouth
 move
 movement
 movie
-Mr
-Mrs
 much
 music
 must
-my
 myself
 name
 nation
@@ -564,22 +549,16 @@ not
 note
 nothing
 notice
-now
-n't
 number
 occur
-of
 off
 offer
 office
 officer
 official
 often
-oh
 oil
-ok
 old
-on
 once
 one
 only
@@ -588,7 +567,6 @@ open
 operation
 opportunity
 option
-or
 order
 organization
 other
@@ -634,7 +612,6 @@ plan
 plant
 play
 player
-PM
 point
 police
 policy
@@ -790,7 +767,6 @@ skill
 skin
 small
 smile
-so
 social
 society
 soldier
@@ -893,7 +869,6 @@ throughout
 throw
 thus
 time
-to
 today
 together
 tonight
@@ -917,16 +892,13 @@ true
 truth
 try
 turn
-TV
 two
 type
 under
 understand
 unit
 until
-up
 upon
-us
 use
 usually
 value
@@ -946,7 +918,6 @@ war
 watch
 water
 way
-we
 weapon
 wear
 week
