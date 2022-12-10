@@ -1,3 +1,4 @@
 # Hangman
 
-This is my first project, a simple game of hangman.
+A simple game of Hangman.
+Words are randomly generated from a list of most common English words.
