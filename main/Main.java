@@ -52,7 +52,7 @@ public class Main {
             }
             // start new word
             word = wordGenerator.getWord();
-            System.out.println(word);
+            // System.out.println(word);
             alive = player.guess(word);
             if (alive){
                 points += 1;
